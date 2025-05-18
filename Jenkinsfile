@@ -12,7 +12,8 @@ pipeline {
   stages {
     stage('Checkout') {
       steps {
-        git 'https://github.com/DavidW2333/playwrightE2Etest.git'
+        git branch: 'main', url: 'https://github.com/DavidW2333/playwrightE2Etest.git'
+
       }
     }
 
@@ -30,7 +31,7 @@ pipeline {
 
     stage('Run Tests') {
       steps {
-        sh 'npx playwright test'
+        sh 'npx playwright test --reporter=junit'
       }
     }
   }

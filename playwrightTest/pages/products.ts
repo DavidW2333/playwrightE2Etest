@@ -17,7 +17,7 @@ export class products{
 
     //const addItemBtn = this.page.locator('.product-overlay a.add-to-cart');
     const addItemBtn = firstItem.locator('.product-overlay').locator('a.add-to-cart');
-    await addItemBtn.scrollIntoViewIfNeeded(); //adding for chrome
+    await addItemBtn.scrollIntoViewIfNeeded(); //the heading is covering the add to cart button 
 
     await addItemBtn.click();
     await this.page.waitForSelector('#cartModal');
