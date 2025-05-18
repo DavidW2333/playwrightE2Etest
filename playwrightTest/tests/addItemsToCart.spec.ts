@@ -12,7 +12,7 @@ test('verify products in cart', async ({page}) => {
     await productPage.continueShopping();
     await productPage.gotoCart();
 
-    expect(productPage.isProdInCart()).toBe(true);
+    expect(await productPage.isProdInCart()).toBe(true);
 
 
     

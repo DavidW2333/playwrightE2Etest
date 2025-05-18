@@ -8,8 +8,18 @@ export class products{
     }
 
     async addProductToCarts(){
-    await this.page.hover('.product-overlay:first-child');
-    await this.page.click('a[data-product-id="1"]');
+    //await this.page.hover('.product-overlay:first-child');
+    await this.page.waitForSelector('.features_items .product-image-wrapper');
+    const firstItem = this.page.locator('.features_items .product-image-wrapper').first()
+    await firstItem.hover()
+    await this.page.waitForTimeout(200);
+    //await firstItem.locator('a[data-product-id="1"]').click();
+
+    //const addItemBtn = this.page.locator('.product-overlay a.add-to-cart');
+    const addItemBtn = firstItem.locator('.product-overlay').locator('a.add-to-cart');
+    await addItemBtn.scrollIntoViewIfNeeded(); //adding for chrome
+
+    await addItemBtn.click();
     await this.page.waitForSelector('#cartModal');
     }
 

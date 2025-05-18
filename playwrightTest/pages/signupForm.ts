@@ -15,7 +15,8 @@ export class signupForm{
 
     async isAccountInfoFormVisible() {
          //await this.page.getByText('h2:has-text("Enter Account Information")').toBeVisible();
-        await expect(this.page.getByText('Enter Account Information!')).toBeVisible();
+         return await this.page.isVisible('text=ENTER ACCOUNT INFORMATION');
+
 
 
       }
