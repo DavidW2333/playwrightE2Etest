@@ -19,26 +19,33 @@ pipeline {
 
     stage('Install dependencies') {
       steps {
-        sh 'npm install'
+        dir('playwrightTest'){
+          sh 'npm install'
+        }
+        
       }
     }
 
     stage('Install Playwright browsers') {
       steps {
+        dir('playwrightTest'){
         sh 'npx playwright install --with-deps'
+        }
       }
     }
 
     stage('Run Tests') {
       steps {
+        dir('playwrightTest'){
         sh 'npx playwright test --reporter=junit'
+        }
       }
     }
   }
 
   post {
     always {
-      junit 'playwright-report/*.xml' 
+      junit 'playwrightTest/playwright-report/*.xml' 
     }
   }
 }
