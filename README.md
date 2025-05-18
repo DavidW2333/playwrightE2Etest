@@ -1,6 +1,9 @@
 e2e testing in playwright and jenkins CI/CD in Docker container
 
 helpful youtube tutorial on Jenkins set up
+
+https://www.youtube.com/watch?v=QNZNfvrFBMo
+
 https://www.youtube.com/watch?v=QNZNfvrFBMo
 
 
