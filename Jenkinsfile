@@ -29,7 +29,7 @@ pipeline {
     stage('Install Playwright browsers') {
       steps {
         dir('playwrightTest'){
-        sh 'npx playwright install --with-deps'
+        sh 'npx playwright install'
         }
       }
     }
