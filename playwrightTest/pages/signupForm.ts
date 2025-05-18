@@ -1,4 +1,5 @@
 import { Page } from "@playwright/test";
+import { expect } from "@playwright/test";
 export class signupForm{
     constructor(private page: Page) {}
 
@@ -13,7 +14,10 @@ export class signupForm{
     }
 
     async isAccountInfoFormVisible() {
-        return await this.page.locator('h2:has-text("Enter Account Information")').isVisible();
+         //await this.page.getByText('h2:has-text("Enter Account Information")').toBeVisible();
+        await expect(this.page.getByText('Enter Account Information!')).toBeVisible();
+
+
       }
 
     

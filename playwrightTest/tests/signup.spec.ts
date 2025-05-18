@@ -1,9 +1,9 @@
 import { test, expect } from '@playwright/test';
-import {signupForm} from '../pages/signupForm'
+import {signupForm} from '../pages/signupForm';
 
 test('sign up process with name and email', async ({ page }) => {
   const signUpPage = new signupForm(page);
-  await signUpPage.goto();
+  await signUpPage.toPage();
 
   const randomEmail = `user${Date.now()}@test.com`;
   await signUpPage.signup('TestUser', randomEmail);
