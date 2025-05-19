@@ -1,7 +1,7 @@
 pipeline {
   agent {
-    node {
-      label 'built-in'
+    docker {
+      image 'mcr.microsoft.com/playwright:v1.50.0-noble'
     }
   }
 
@@ -20,7 +20,7 @@ pipeline {
     stage('Install dependencies') {
       steps {
         dir('playwrightTest'){
-          sh 'npm install'
+          sh 'npm ci' //The short version Use npm install to update and install your dependencies. Use npm ci to only install your dependencies. Always use npm ci in your pipelines/actions, never npm install
         }
         
       }
@@ -29,7 +29,7 @@ pipeline {
     stage('Install Playwright browsers') {
       steps {
         dir('playwrightTest'){
-        sh 'npx playwright install'
+        sh 'npx playwright install --with-deps'
         }
       }
     }
