@@ -1,4 +1,11 @@
-e2e testing and jenkins CI
+e2e testing in playwright and jenkins CI/CD in Docker container
+
+helpful youtube tutorial on Jenkins set up
+
+https://www.youtube.com/watch?v=QNZNfvrFBMo
+
+https://www.youtube.com/watch?v=QNZNfvrFBMo
+
 
 docker installation steps:
 
@@ -15,8 +22,11 @@ docker run \
 >   jenkins/jenkins:lts
 
 #get jenkins password
+
 #The initial admin password is stored in /var/jenkins_home/secrets/initialAdminPassword within the container.
+
 #You can print this password in your terminal by running: docker exec jenkins cat /var/jenkins_home/secrets/initialAdminPassword
+
 docker exec jenkins cat /var/jenkins_home/secrets/initialAdminPassword
 
 
