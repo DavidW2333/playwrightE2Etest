@@ -52,8 +52,8 @@ pipeline {
           sh 'npm ci' //The short version Use npm install to update and install your dependencies. Use npm ci to only install your dependencies. Always use npm ci in your pipelines/actions, never npm install
         }
         
-    //   }
-    // }
+    }
+  }
 
     stage('Install Playwright browsers') {
       steps {
