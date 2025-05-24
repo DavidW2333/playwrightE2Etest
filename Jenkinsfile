@@ -16,7 +16,7 @@ pipeline {
     stage('Install Playwright System Dependencies') {
       steps {
         sh '''
-          apt-get update && apt-get install -y --no-install-recommends \
+          sudo apt-get update && apt-get install -y --no-install-recommends \
           libnss3 \
           libatk1.0-0 \
           libatk-bridge2.0-0 \
