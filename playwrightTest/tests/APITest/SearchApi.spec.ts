@@ -3,7 +3,7 @@ import {test, expect, request} from '@playwright/test';
 test('get the product list', async ({request}) => {
     const response = await request.post('https://automationexercise.com/api/searchProduct', {
         form:{
-            search_product: 'top' // the docs implies form-style, not JSON-style.
+            search_product: 'top' // the docs is form-style, not JSON-style.
         },
         headers: {
             'Content-Type': 'application/x-www-form-urlencoded'
@@ -27,5 +27,7 @@ test('POST To Search Product without search_product parameter', async ({request}
     expect (data.responseCode).toBe(400);
     expect (data.message).toBe('Bad request, search_product parameter is missing in POST request.');
 });
+
+
 
     
