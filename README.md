@@ -1,3 +1,5 @@
+#updates The whole jenkins and docker setup was a huge mess, going to completely ditch this repo:(
+
 e2e testing in playwright and jenkins CI/CD in Docker container
 
 helpful youtube tutorial on Jenkins set up
