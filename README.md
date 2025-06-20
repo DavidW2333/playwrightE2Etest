@@ -1,4 +1,4 @@
-#updates The whole jenkins and docker setup was a huge mess, going to completely ditch this repo:(
+#updates The whole jenkins and docker setup was a huge mess, going to stop updating this repo:(
 
 e2e testing in playwright and jenkins CI/CD in Docker container
 
